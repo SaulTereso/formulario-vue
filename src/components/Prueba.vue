@@ -4,7 +4,7 @@
     <br>
     <h1>Reserva tu cita</h1>
       <img alt="Vue logo" src="https://salonyspasv.com/wp-content/uploads/2022/09/new_logo.jpeg" width="250">
-        <form id="myform" @submit.prevent="validateForm">
+        <form id="myform" @submit.prevent="validateForm" method="POST">
           
           <div class="row g-3">
             <div class="col-md-4">
@@ -35,7 +35,33 @@
 
             <div class="col">
               <label for="time">Elija la hora para su reservación</label>
-              <input v-model="time" type="time" class="form-control">
+              <!-- <input v-model="time" type="time" class="form-control" min="09:00" max="20:00"> -->
+              <input v-model="time" type="time" list="popularHours" class="form-control" />
+              <datalist id="popularHours">
+                <option value="09:00"></option>
+                <option value="09:30"></option>
+                <option value="10:00"></option>
+                <option value="10:30"></option>
+                <option value="11:00"></option>
+                <option value="11:30"></option>
+                <option value="12:00"></option>
+                <option value="12:30"></option>
+                <option value="13:00"></option>
+                <option value="13:30"></option>
+                <option value="14:00"></option>
+                <option value="14:30"></option>
+                <option value="15:00"></option>
+                <option value="15:30"></option>
+                <option value="16:00"></option>
+                <option value="16:30"></option>
+                <option value="17:00"></option>
+                <option value="17:30"></option>
+                <option value="18:00"></option>
+                <option value="18:30"></option>
+                <option value="19:00"></option>
+                <option value="19:30"></option>
+                <option value="20:00"></option>
+              </datalist>
             </div>
           </div>
           <br>
@@ -357,6 +383,7 @@ export default {
           }).then((result) => {
             if(result.value) {
               console.log('entra el ok')
+              //!Reset del formulario
               this.selected = '' ;
               this.name = '';
               this.email= '';
@@ -376,6 +403,7 @@ export default {
           console.log(error.response.data.message)
           this.failed = true
       });
+      
     }
   }
 }
