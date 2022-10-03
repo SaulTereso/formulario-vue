@@ -16,7 +16,7 @@ export default {
     //HelloWorld,
     Prueba,
     Login,
-    Registros
+    Registros,
   }
 }
 </script>
