@@ -1,5 +1,6 @@
 <template>
-  <Prueba/>
+  <!-- <Prueba/> -->
+  <Registros/>
   <!-- <Login/> -->
 </template>
 
@@ -7,6 +8,7 @@
 //import HelloWorld from './components/HelloWorld.vue'
 import Prueba from './components/Prueba.vue'
 import Login from './components/Login.vue'
+import Registros from './components/Registros.vue'
 
 export default {
   name: 'App',
@@ -14,6 +16,7 @@ export default {
     //HelloWorld,
     Prueba,
     Login,
+    Registros
   }
 }
 </script>
